@@ -15,7 +15,6 @@ import solucraft.proxy.*;
 import solucraft.recipes.*;
 import solucraft.blocks.*;
 import solucraft.events.MobDrop;
-import solucraft.gui.GuiHandler;
 import solucraft.items.*;
 import solucraft.world.WorldGenerator;
 import cpw.mods.fml.common.Mod;
@@ -36,7 +35,7 @@ public class SoluCraft {
 	//creativetabs
 	public static CreativeTabs tabSoluCraft = new CreativeTabs("SoluCraft"){
 		public Item getTabIconItem() {
-			return Item.getItemFromBlock(ModBlock.blockMarble);
+			return ModItems.glass;
 		}	
 	};
 	

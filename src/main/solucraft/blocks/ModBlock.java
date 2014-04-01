@@ -4,7 +4,6 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import solucraft.SoluCraft;
-import solucraft.gui.GuiHandler;
 import solucraft.lib.Metadata;
 import solucraft.lib.Module;
 import solucraft.lib.Reference;
@@ -51,9 +50,8 @@ public class ModBlock {
 			slabRuby,
 			slabSapp, slabGreen,
 			//stairs
-		    stairDia, stairsGold, stairsIron, stairsRuby, stairsSapp, stairsGreen,
-			// macerator
-			blockMaceratorIdle, blockMaceratorActive;
+		    stairDia, stairsGold, stairsIron, stairsRuby, stairsSapp, stairsGreen;
+
 	// Lamps
 	public static ItemStack blockLampWhite, blockLampOrange, blockLampMagenta,
 			blockLampLBlue, blockLampYellow, blockLampLime, blockLampPink,
@@ -150,19 +148,7 @@ public class ModBlock {
 				.setCreativeTab(SoluCraft.tabSoluCraft)
 				.setBlockTextureName("solucraft:blockStorageCopper");
 		GameRegistry.registerBlock(blockStorageCopper, "blockStorageCopper");
-		// macerator
-		// Macerator
-		blockMaceratorIdle = new BlockMacerator(false)
-				.setBlockName("macerator_idle").setHardness(3.7F)
-				.setCreativeTab(SoluCraft.tabSoluCraft);
-		blockMaceratorActive = new BlockMacerator(true)
-				.setBlockName("macerator_active").setHardness(3.7F)
-				.setLightLevel(0.9F);
-		registerBlock(blockMaceratorIdle, "Macerator");
-		registerBlock(blockMaceratorActive, "Macerator");
-		GameRegistry.registerTileEntity(TileEntityMacerator.class, "Macerator");
-		LanguageRegistry.instance().addStringLocalization(
-				"container.macerator", "Macerator");
+	
 
 		// Basalt and Marble
 		blockMarble = new blockMarble().setBlockName("blockMarble")

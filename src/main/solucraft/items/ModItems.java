@@ -83,8 +83,8 @@ public class ModItems {
 		pickaxeSapphire = new pickaxe(material).setUnlocalizedName("pickaxeSapphire").setCreativeTab(SoluCraft.tabSoluCraft).setTextureName("solucraft:pickaxeSapphire");
 		GameRegistry.registerItem(pickaxeSapphire, "pickaxeSapphire");
 		
-		macerator = new Item().setUnlocalizedName("macerator").setCreativeTab(SoluCraft.tabSoluCraft).setTextureName("solucraft:macerator").setMaxDamage(128).setMaxStackSize(1);
-		GameRegistry.registerItem(macerator, "macerator");
+		/*macerator = new Item().setUnlocalizedName("macerator").setCreativeTab(SoluCraft.tabSoluCraft).setTextureName("solucraft:macerator").setMaxDamage(128).setMaxStackSize(1);
+		GameRegistry.registerItem(macerator, "macerator");*/
 		
 		rubberRaw = new Item().setUnlocalizedName("rubberRaw").setCreativeTab(SoluCraft.tabSoluCraft).setTextureName("solucraft:rubberRaw").setMaxStackSize(64);
 		GameRegistry.registerItem(rubberRaw, "rubberRaw");
