@@ -48,7 +48,19 @@ public class crafting {
        	GameRegistry.addRecipe(new ItemStack (ModItems.legs, 1), new Object[] {"XXX","XIX", "XIX" ,'X', Items.leather, 'I', ModItems.rubberSmelted});
        	GameRegistry.addRecipe(new ItemStack (ModItems.boots, 1), new Object[] {"III","XIX", "XIX" ,'X', Items.leather, 'I', ModItems.rubberSmelted});
 
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.slabDia, 6), new Object[] {"XXX",'X', Blocks.diamond_block});
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.slabGold, 6), new Object[] {"XXX",'X', Blocks.gold_block});
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.slabIron, 6), new Object[] {"XXX",'X', Blocks.iron_block});
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.slabRuby, 6), new Object[] {"XXX",'X', ModBlock.blockStorageRuby});
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.slabSapp, 6), new Object[] {"XXX",'X', ModBlock.blockStorageSapphire});
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.slabGreen, 6), new Object[] {"XXX",'X', ModBlock.blockStorageGreenSapphire});
     	
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.stairDia, 6), new Object[] {"X  ","XX ","XXX",'X', Blocks.diamond_block});
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.stairsGold, 6), new Object[] {"X  ","XX ","XXX",'X', Blocks.gold_block});
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.stairsIron, 6), new Object[] {"X  ","XX ","XXX",'X', Blocks.iron_block});
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.stairsRuby, 6), new Object[] {"X  ","XX ","XXX",'X', ModBlock.blockStorageRuby});
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.stairsSapp, 6), new Object[] {"X  ","XX ","XXX",'X', ModBlock.blockStorageSapphire});
+    	GameRegistry.addRecipe(new ItemStack (ModBlock.stairsGreen, 6), new Object[] {"X  ","XX ","XXX",'X', ModBlock.blockStorageGreenSapphire});
     }
 
 }

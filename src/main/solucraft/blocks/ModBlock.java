@@ -9,6 +9,7 @@ import solucraft.lib.Metadata;
 import solucraft.lib.Module;
 import solucraft.lib.Reference;
 import solucraft.lib.Strings;
+import solucraft.stairs.*;
 import solucraft.world.WorldGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -21,7 +22,8 @@ public class ModBlock {
 	public static Block
 	// Ores
 			oreSapphire,
-			oreGreenSapphire, oreRuby,
+			oreGreenSapphire,
+			oreRuby,
 			oreCopper,
 			oreTin,
 			oreSilver,
@@ -30,18 +32,26 @@ public class ModBlock {
 			// block storage
 			blockStorageSapphire, blockStorageGreenSapphire,
 			blockStorageRuby,
-			blockStorageCopper, blockStorageTin,
+			blockStorageCopper,
+			blockStorageTin,
 			blockStorageSilver,
 			blockStorageNikolite,
 			blockStorageTungsten,
 			// Marble and Basalt
 			blockMarble, blockBasalt, blockMarbleBrick,
 			blockBasaltCobble,
-			blockBasaltBrick, blockBasaltChiseled, blockBasaltPaver,
+			blockBasaltBrick, blockBasaltChiseled,
+			blockBasaltPaver,
 			// Lamp
 			blockLampNormal, blockLampNormalActive,
 			blockLampInverted,
 			blockLampInvertedActive,
+			//slabs
+			slabDia, slabIron, slabGold,
+			slabRuby,
+			slabSapp, slabGreen,
+			//stairs
+		    stairDia, stairsGold, stairsIron, stairsRuby, stairsSapp, stairsGreen,
 			// macerator
 			blockMaceratorIdle, blockMaceratorActive;
 	// Lamps
@@ -188,6 +198,56 @@ public class ModBlock {
 				.setCreativeTab(SoluCraft.tabSoluCraft)
 				.setBlockTextureName("solucraft:blockBasaltBrick");
 		GameRegistry.registerBlock(blockBasaltBrick, "blockBasaltBrick");
+
+		slabDia = new slab(false).setBlockName("slabDia")
+				.setCreativeTab(SoluCraft.tabSoluCraft)
+				.setBlockTextureName("minecraft:diamond_block");
+		GameRegistry.registerBlock(slabDia, "slabDia");
+		slabIron = new slab(false).setBlockName("slabIron")
+				.setCreativeTab(SoluCraft.tabSoluCraft)
+				.setBlockTextureName("minecraft:iron_block");
+		GameRegistry.registerBlock(slabIron, "slabIron");
+		slabGold = new slab(false).setBlockName("slabGold")
+				.setCreativeTab(SoluCraft.tabSoluCraft)
+				.setBlockTextureName("minecraft:gold_block");
+		GameRegistry.registerBlock(slabGold, "slabGold");
+		slabRuby = new slab(false).setBlockName("slabRuby")
+				.setCreativeTab(SoluCraft.tabSoluCraft)
+				.setBlockTextureName("solucraft:blockStorageRuby");
+		GameRegistry.registerBlock(slabRuby, "slabRuby");
+		slabSapp = new slab(false).setBlockName("slabSapp")
+				.setCreativeTab(SoluCraft.tabSoluCraft)
+				.setBlockTextureName("solucraft:blockStorageSapphire");
+		GameRegistry.registerBlock(slabSapp, "slabSapp");
+		slabGreen = new slab(false).setBlockName("slabGreen")
+				.setCreativeTab(SoluCraft.tabSoluCraft)
+				.setBlockTextureName("solucraft:blockStorageGreenSapphire");
+		GameRegistry.registerBlock(slabGreen, "slabGreen");
+		
+		
+		stairDia = new stairsDia().setBlockName("stairDia")
+				.setCreativeTab(SoluCraft.tabSoluCraft);
+		GameRegistry.registerBlock(stairDia, "stairDia");
+		
+		stairsGold = new stairsGold().setBlockName("stairsGold")
+				.setCreativeTab(SoluCraft.tabSoluCraft);
+		GameRegistry.registerBlock(stairsGold, "stairsGold");
+		
+		stairsIron = new stairsIron().setBlockName("stairsIron")
+				.setCreativeTab(SoluCraft.tabSoluCraft);
+		GameRegistry.registerBlock(stairsIron, "stairsIron");
+		
+		stairsRuby = new stairsRuby().setBlockName("stairsRuby")
+				.setCreativeTab(SoluCraft.tabSoluCraft);
+		GameRegistry.registerBlock(stairsRuby, "stairsRuby");
+		
+		stairsSapp = new stairsSapp().setBlockName("stairsSapp")
+				.setCreativeTab(SoluCraft.tabSoluCraft);
+		GameRegistry.registerBlock(stairsSapp, "stairsSapp");
+		
+		stairsGreen = new stairsGreen().setBlockName("stairsGreen")
+				.setCreativeTab(SoluCraft.tabSoluCraft);
+		GameRegistry.registerBlock(stairsGreen, "stairsGreen");
 
 	}
 
