@@ -14,6 +14,7 @@ import solucraft.lib.*;
 import solucraft.proxy.*;
 import solucraft.recipes.*;
 import solucraft.blocks.*;
+import solucraft.entity.SEntity;
 import solucraft.events.MobDrop;
 import solucraft.items.*;
 import solucraft.world.WorldGenerator;
@@ -35,6 +36,12 @@ public class SoluCraft {
 	//creativetabs
 	public static CreativeTabs tabSoluCraft = new CreativeTabs("SoluCraft"){
 		public Item getTabIconItem() {
+			return Item.getItemFromBlock(ModBlocks.blockBasalt);
+		}	
+	};
+	
+	public static CreativeTabs tabSoluCraftItems = new CreativeTabs("SoluCraftItems"){
+		public Item getTabIconItem() {
 			return ModItems.glass;
 		}	
 	};
@@ -50,13 +57,15 @@ public class SoluCraft {
 	
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-    ModBlock.init();
+    ModBlocks.init();
     ModItems.init();
     crafting.init();
     smelting.init();
     GameRegistry.registerWorldGenerator(WorldGenerator.instance, 0);
 	MinecraftForge.EVENT_BUS.register(new MobDrop());
 	int RenderArmor = proxy.addArmor("smoking");
+	SEntity.init();
+	proxy.registerRenderThings();
     }
    
  

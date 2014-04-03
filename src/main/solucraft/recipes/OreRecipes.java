@@ -3,7 +3,7 @@ package solucraft.recipes;
 import java.util.HashMap;
 import java.util.Map;
 
-import solucraft.blocks.ModBlock;
+import solucraft.blocks.ModBlocks;
 import solucraft.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -25,7 +25,7 @@ public class OreRecipes{
 	}
 	
 	public  OreRecipes() {
-		this.addRefining(ModBlock.oreSapphire, new ItemStack(ModItems.gemSapphire, 1, 0), 1.0F);
+		this.addRefining(ModBlocks.oreSapphire, new ItemStack(ModItems.gemSapphire, 1, 0), 1.0F);
 	}
 	
 	public void addRefining(Block par1ItemID, ItemStack par2ItemStack, float par3Float) {

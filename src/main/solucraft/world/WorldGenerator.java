@@ -2,7 +2,7 @@ package solucraft.world;
 
 import java.util.Random;
 
-import solucraft.blocks.ModBlock;
+import solucraft.blocks.ModBlocks;
 import solucraft.lib.Metadata;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
@@ -32,16 +32,16 @@ public class WorldGenerator implements IWorldGenerator
  
     private void generateSurface(World world, Random random, int x, int z)
     {
-        this.addOreSpawn(ModBlock.oreSapphire, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
-        this.addOreSpawn(ModBlock.oreGreenSapphire, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
-        this.addOreSpawn(ModBlock.oreRuby, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
-        this.addOreSpawn(ModBlock.oreNikolite, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
-        this.addOreSpawn(ModBlock.oreTungsten, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
-        this.addOreSpawn(ModBlock.oreTin, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
-        this.addOreSpawn(ModBlock.oreSilver, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
-        this.addOreSpawn(ModBlock.oreCopper, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
-        this.addOreSpawn(ModBlock.blockMarble, world, random, x, z, 40, 1, 8 + random.nextInt(3), 5, 15, 20);
-        this.addOreSpawn(ModBlock.blockBasalt,  world, random, x, z, 40, 1, 8 + random.nextInt(3), 5, 15, 20);
+        this.addOreSpawn(ModBlocks.oreSapphire, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
+        this.addOreSpawn(ModBlocks.oreGreenSapphire, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
+        this.addOreSpawn(ModBlocks.oreRuby, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
+        this.addOreSpawn(ModBlocks.oreNikolite, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
+        this.addOreSpawn(ModBlocks.oreTungsten, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
+        this.addOreSpawn(ModBlocks.oreTin, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
+        this.addOreSpawn(ModBlocks.oreSilver, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
+        this.addOreSpawn(ModBlocks.oreCopper, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
+        this.addOreSpawn(ModBlocks.blockMarble, world, random, x, z, 40, 1, 8 + random.nextInt(3), 5, 15, 20);
+        this.addOreSpawn(ModBlocks.blockBasalt,  world, random, x, z, 40, 1, 8 + random.nextInt(3), 5, 15, 20);
         }
  
     private void generateNether(World world, Random random, int x, int z)

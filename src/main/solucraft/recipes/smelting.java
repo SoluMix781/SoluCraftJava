@@ -1,6 +1,6 @@
 package solucraft.recipes;
 
-import solucraft.blocks.ModBlock;
+import solucraft.blocks.ModBlocks;
 import solucraft.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -11,25 +11,25 @@ public class smelting {
 	public static void init(){
 		
 		//ores_Dusts/Ingots/Gems
-		GameRegistry.addSmelting(ModBlock.oreNikolite, new ItemStack(ModItems.dustNikolite, 3), 0.1f);
-		GameRegistry.addSmelting(ModBlock.oreTungsten, new ItemStack(ModItems.ingotTungsten, 1), 0.1f);
-		GameRegistry.addSmelting(ModBlock.oreSapphire, new ItemStack(ModItems.gemSapphire, 2), 0.1f);
-		GameRegistry.addSmelting(ModBlock.oreGreenSapphire, new ItemStack(ModItems.gemGreenSapphire, 2), 0.1f);
-		GameRegistry.addSmelting(ModBlock.oreRuby, new ItemStack(ModItems.gemRuby, 2), 0.1f);
-		GameRegistry.addSmelting(ModBlock.oreTin, new ItemStack(ModItems.ingotTin, 1), 0.1f);
-		GameRegistry.addSmelting(ModBlock.oreSilver, new ItemStack(ModItems.ingotSilver, 1), 0.1f);
-		GameRegistry.addSmelting(ModBlock.oreCopper, new ItemStack(ModItems.ingotCopper, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.oreNikolite, new ItemStack(ModItems.dustNikolite, 3), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.oreTungsten, new ItemStack(ModItems.ingotTungsten, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.oreSapphire, new ItemStack(ModItems.gemSapphire, 2), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.oreGreenSapphire, new ItemStack(ModItems.gemGreenSapphire, 2), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.oreRuby, new ItemStack(ModItems.gemRuby, 2), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.oreTin, new ItemStack(ModItems.ingotTin, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.oreSilver, new ItemStack(ModItems.ingotSilver, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.oreCopper, new ItemStack(ModItems.ingotCopper, 1), 0.1f);
 		//Storage_Gems/Ingots/Dusts
-		GameRegistry.addSmelting(ModBlock.blockStorageSapphire, new ItemStack(ModItems.gemSapphire, 1), 0.1f);
-		GameRegistry.addSmelting(ModBlock.blockStorageGreenSapphire, new ItemStack(ModItems.gemGreenSapphire, 1), 0.1f);
-		GameRegistry.addSmelting(ModBlock.blockStorageRuby, new ItemStack(ModItems.gemRuby, 1), 0.1f);
-		GameRegistry.addSmelting(ModBlock.blockStorageNikolite, new ItemStack(ModItems.dustNikolite, 1), 0.1f);
-		GameRegistry.addSmelting(ModBlock.blockStorageTungsten, new ItemStack(ModItems.ingotTungsten, 1), 0.1f);
-		GameRegistry.addSmelting(ModBlock.blockStorageTin, new ItemStack(ModItems.ingotTin, 1), 0.1f);
-		GameRegistry.addSmelting(ModBlock.blockStorageSilver, new ItemStack(ModItems.ingotSilver, 1), 0.1f);
-		GameRegistry.addSmelting(ModBlock.blockStorageCopper, new ItemStack(ModItems.ingotCopper, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.blockStorageSapphire, new ItemStack(ModItems.gemSapphire, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.blockStorageGreenSapphire, new ItemStack(ModItems.gemGreenSapphire, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.blockStorageRuby, new ItemStack(ModItems.gemRuby, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.blockStorageNikolite, new ItemStack(ModItems.dustNikolite, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.blockStorageTungsten, new ItemStack(ModItems.ingotTungsten, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.blockStorageTin, new ItemStack(ModItems.ingotTin, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.blockStorageSilver, new ItemStack(ModItems.ingotSilver, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.blockStorageCopper, new ItemStack(ModItems.ingotCopper, 1), 0.1f);
 		//basalt
-		GameRegistry.addSmelting(ModBlock.blockBasaltCobble, new ItemStack(ModBlock.blockBasalt, 1), 0.1f);
+		GameRegistry.addSmelting(ModBlocks.blockBasaltCobble, new ItemStack(ModBlocks.blockBasalt, 1), 0.1f);
 		//rubber
 		GameRegistry.addSmelting(ModItems.rubberSmelted, new ItemStack(ModItems.rubberRaw, 1), 0.1f);
 		//lamb

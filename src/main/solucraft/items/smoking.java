@@ -9,7 +9,7 @@ public class smoking extends ItemArmor {
 
 	public smoking(ArmorMaterial material, int id, int placement) {
 		super(material, id, placement);
-		this.setCreativeTab(SoluCraft.tabSoluCraft);
+		this.setCreativeTab(SoluCraft.tabSoluCraftItems);
 		
 		       if (placement == 1){
 			setTextureName("solucraft:chest");

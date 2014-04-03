@@ -1,26 +1,30 @@
 package solucraft.blocks;
 
+
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockSlab;
+import net.minecraft.block.BlockStairs;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import solucraft.SoluCraft;
+import solucraft.blocks.ModBlocks;
+
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import solucraft.SoluCraft;
-import net.minecraft.block.BlockSlab;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
 
-public class slab extends BlockSlab
+public class stairs extends BlockStairs
 {
     public static final String[] field_150005_b = new String[] {"negative"};
     private static final String __OBFID = "CL_00000337";
 
-    public slab(boolean p_i45437_1_)
+    public stairs(Block block)
     {
-        super(p_i45437_1_, Material.wood);
+        super(block, 1);
         this.setCreativeTab(SoluCraft.tabSoluCraft);
     }
 
