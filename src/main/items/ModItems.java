@@ -4,8 +4,11 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import solucraft.SoluCraft;
+import solucraft.blocks.BlockCamoDoor;
+import solucraft.blocks.ModBlocks;
 import solucraft.lib.Metadata;
 import solucraft.lib.Module;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Items;
@@ -29,7 +32,7 @@ public class ModItems {
 			shovelSapphire, shovelGreenSapphire, pickaxeRuby,
 			pickaxeGreenSapphire, pickaxeSapphire, hoeRuby, hoeSapphire,
 			hoeGreenSapphire, macerator, rubberRaw, rubberSmelted,  lambRaw, lambCooked, stickIron,
-			grenade, chestDoctor;
+			grenade, chestDoctor,camoDoorWoodItem, camoDoorIronItem,camoPaste;
 	public static Item chest, legs, boots, glass;
 	public static ToolMaterial material = EnumHelper.addToolMaterial(
 			"material", 3, 30000, 8.0F, 3.0F, 10);
@@ -110,6 +113,15 @@ public class ModItems {
         GameRegistry.registerItem(boots , "Boots");
         GameRegistry.registerItem(glass , "Glass");
         GameRegistry.registerItem(chestDoctor,"chestDoctor");
+        
+        camoDoorWoodItem = new ItemCamoDoor(Material.wood).setUnlocalizedName("SecretWoodenDoorItem");
+        camoDoorIronItem = new ItemCamoDoor(Material.iron).setUnlocalizedName("SecretIronDoorItem");
+        camoPaste = new Item().setUnlocalizedName("CamoflaugePaste").setCreativeTab(SoluCraft.tabSoluCraftItems).setTextureName(Reference.TEXTURE_ITEM_PASTE);
+        GameRegistry.registerItem(camoDoorWoodItem, "SecretWoodenDoorItem");
+        GameRegistry.registerItem(camoDoorIronItem, "SecretWoodenIronItem");
+        GameRegistry.registerItem(camoPaste, "CamoflaugePaste");
+        OreDictionary.registerOre(Reference.CAMO_PASTE, camoPaste);
+
         
         grenade = new Grenate().setUnlocalizedName("Grenade").setCreativeTab(SoluCraft.tabSoluCraftItems).setTextureName("solucraft:grenade");
         GameRegistry.registerItem(grenade, "grenade");

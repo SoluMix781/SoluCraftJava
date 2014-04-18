@@ -4,8 +4,6 @@ package solucraft.ironchest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import solucraft.items.ModItems;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -26,7 +24,6 @@ public enum IronChestType {
     DIAMOND(108, 12, true, "Diamond Chest", "diamondchest.png", 2, Arrays.asList("gemDiamond"), TileEntityDiamondChest.class, "GGGmPmGGG", "GGGG4Gmmm"),
     CRYSTAL(108, 12, true, "Crystal Chest", "crystalchest.png", 5, Arrays.asList("blockGlass"), TileEntityCrystalChest.class, "GGGGPGGGG"),
     OBSIDIAN(108, 12, false, "Obsidian Chest", "obsidianchest.png", 6, Arrays.asList("obsidian"), TileEntityObsidianChest.class, "mmmm2mmmm"),
-    DIRTCHEST9000(1, 1, false, "Dirt Chest 9000", "dirtchest.png",7,Arrays.asList("dirt"), TileEntityDirtChest.class,Item.getItemFromBlock(Blocks.dirt),"mmmmCmmmm"),
     WOOD(0, 0, false, "", "", -1, Arrays.asList("plankWood"), null);
     int size;
     private int rowLength;
@@ -159,15 +156,6 @@ public enum IronChestType {
         {
             return Blocks.dirt;
         }
-        else if (mat == "ingtCopper")
-        {
-        	return ModItems.ingotCopper;
-        }
-        else if (mat == "ingotSilver")
-        {
-        	return ModItems.ingotSilver;
-        }
-        
         return mat;
     }
 
@@ -256,10 +244,5 @@ public enum IronChestType {
         return itemFilter == null || itemstack == null || itemstack.getItem() == itemFilter;
     }
     public void adornItemDrop(ItemStack item)
-    {
-        if (this == DIRTCHEST9000)
-        {
-            item.setTagInfo("dirtchest", new NBTTagByte((byte) 1));
-        }
-    }
+    {}
 }

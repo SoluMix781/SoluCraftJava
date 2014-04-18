@@ -12,6 +12,8 @@ import solucraft.ironchest.ContainerIronChest;
 import solucraft.ironchest.IronChestType;
 import solucraft.ironchest.TileEntityIronChest;
 
+
+
 public class GUIChest extends GuiContainer {
     public enum ResourceList {
         IRON(new ResourceLocation("ironchest", "textures/gui/ironcontainer.png")),
@@ -30,8 +32,7 @@ public class GUIChest extends GuiContainer {
         GOLD(184, 256, ResourceList.GOLD, IronChestType.GOLD),
         DIAMOND(238, 256, ResourceList.DIAMOND, IronChestType.DIAMOND),
         CRYSTAL(238, 256, ResourceList.DIAMOND, IronChestType.CRYSTAL),
-        OBSIDIAN(238, 256, ResourceList.DIAMOND, IronChestType.OBSIDIAN),
-        DIRTCHEST9000(184, 184, ResourceList.DIRT, IronChestType.DIRTCHEST9000);
+        OBSIDIAN(238, 256, ResourceList.DIAMOND, IronChestType.OBSIDIAN),;
 
         private int xSize;
         private int ySize;

@@ -4,16 +4,21 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import solucraft.SoluCraft;
+import solucraft.common.MaterialFakeAir;
+import solucraft.items.ItemBlockCamoButton;
+import solucraft.items.ItemCamoDoor;
 import solucraft.lib.Metadata;
 import solucraft.lib.Module;
 import solucraft.lib.Reference;
 import solucraft.lib.Strings;
 import solucraft.world.WorldGenerator;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockTNT;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModBlocks {
@@ -51,9 +56,14 @@ public class ModBlocks {
 			blockLampInverted,
 			blockLampInvertedActive,
 			// slabs
-			slabDia, slabIron, slabGold, slabRuby, slabSapp,
+			slabDia, slabIron, slabGold,
+			slabRuby,
+			slabSapp,
 			slabGreen,
-			slabEmerald, slabLapis, slabMarble, slabMarbleBrick,
+			slabEmerald,
+			slabLapis,
+			slabMarble,
+			slabMarbleBrick,
 			slabBasalt,
 			slabBasaltBrick,
 			slabBasaltChiseled,
@@ -67,23 +77,26 @@ public class ModBlocks {
 			stairsMarble,
 			stairsMarbleBrick, stairsBasalt,
 			stairsBasaltBrick,
-			stairsBasaltChiseled, stairsBasaltPaver, stairsWool, stairsGlow, stairsClay,
-			stairsSand;
+			stairsBasaltChiseled,
+			stairsBasaltPaver,
+			stairsWool,
+			stairsGlow,
+			stairsClay,
+			stairsSand,
+			// secretrooms
+			torchLever, oneWay, camoDoorWood, camoDoorIron,
+			camoTrapDoor,
+			camoGhost, camoLever, camoCurrent, camoButton,
+			camoGate,
+			camoGateExt, camoPlateAll, camoPlatePlayer,
+			camoPlateLight,
+			camoPlateHeavy, camoStairs, camoChest,
+			camoTrappedChest,
+			camoLightDetector, solidAir;
 
-	// Lamps
-	public static ItemStack blockLampWhite, blockLampOrange, blockLampMagenta,
-			blockLampLBlue, blockLampYellow, blockLampLime, blockLampPink,
-			blockLampGray, blockLampLGray, blockLampCyan, blockLampPurple,
-			blockLampBlue, blockLampBrown, blockLampGreen, blockLampRed,
-			blockLampBlack, blockLampInvertedWhite, blockLampInvertedOrange,
-			blockLampInvertedMagenta, blockLampInvertedLBlue,
-			blockLampInvertedYellow, blockLampInvertedLime,
-			blockLampInvertedPink, blockLampInvertedGray,
-			blockLampInvertedLGray, blockLampInvertedCyan,
-			blockLampInvertedPurple, blockLampInvertedBlue,
-			blockLampInvertedBrown, blockLampInvertedGreen,
-			blockLampInvertedRed, blockLampInvertedBlack;
-	public static final int guiIdMacerator = 8;
+	// render IDs
+	public static boolean displayCamo = true;
+	public static int render3DId, renderFlatId;
 
 	public static void init() {
 
@@ -267,12 +280,12 @@ public class ModBlocks {
 				.setCreativeTab(SoluCraft.tabSoluCraft)
 				.setBlockTextureName("solucraft:blockBasaltChiseled");
 		GameRegistry.registerBlock(slabBasaltChiseled, "slabBasaltChiseled");
-		
+
 		slabGlow = new slab(false).setBlockName("slabGlow")
 				.setCreativeTab(SoluCraft.tabSoluCraft)
 				.setBlockTextureName("minecraft:glowstone");
 		GameRegistry.registerBlock(slabGlow, "slabGlow");
-		
+
 		// stairs
 		stairDia = new stairs(Blocks.diamond_block).setBlockName("stairDia")
 				.setCreativeTab(SoluCraft.tabSoluCraft);
@@ -336,12 +349,88 @@ public class ModBlocks {
 		stairsGlow = new stairs(Blocks.glowstone).setBlockName("stairsGlow")
 				.setCreativeTab(SoluCraft.tabSoluCraft);
 		GameRegistry.registerBlock(stairsGlow, "stairsGlow");
-		
+
 		stairsClay = new stairs(Blocks.clay).setBlockName("stairsClay")
 				.setCreativeTab(SoluCraft.tabSoluCraft);
 		GameRegistry.registerBlock(stairsClay, "stairsClay");
-		
-		
+
+		MinecraftForge.EVENT_BUS.register(SoluCraft.proxy);
+
+		torchLever = new BlockTorchLever(80).setBlockName("TorchLever");
+
+		// Camo oneWay
+		oneWay = new BlockOneWay().setBlockName("OneWayGlass");
+
+		// gates
+		camoGate = new BlockCamoGate().setBlockName("CamoGate");
+		camoGateExt = new BlockCamoDummy().setBlockName("CamoDummy");
+
+		// TrapDoor
+		camoTrapDoor = new BlockCamoTrapDoor().setBlockName("SecretTrapDoor");
+
+		// FullCamoBlocks
+		camoGhost = new BlockCamoGhost().setBlockName("GhostBlock");
+		camoLever = new BlockCamoLever().setBlockName("SecretLever");
+		camoCurrent = new BlockCamoWire().setBlockName("SecretRedstone");
+		camoButton = new BlockCamoButton().setBlockName("SecretButton");
+
+		camoPlateAll = new BlockCamoPlate(false)
+				.setBlockName("SecretPressurePlate");
+		camoPlatePlayer = new BlockCamoPlate(true)
+				.setBlockName("SecretPlayerPlate");
+		camoPlateLight = new BlockCamoPlateWeighted(64)
+				.setBlockName("SecretLightPlate");
+		camoPlateHeavy = new BlockCamoPlateWeighted(640)
+				.setBlockName("SecretHeavyPlate");
+
+		camoStairs = new BlockCamoStair().setBlockName("SecretStair");
+
+		camoChest = new BlockCamoChest(false).setBlockName("SecretChest");
+		camoTrappedChest = new BlockCamoChest(true)
+				.setBlockName("SecretTrappedChest");
+
+		camoLightDetector = new BlockCamoLightDetector()
+				.setBlockName("SecretLightDetector");
+
+		solidAir = new BlockSolidAir(new MaterialFakeAir())
+				.setBlockName("SolidAir");
+		camoDoorWood = new BlockCamoDoor(Material.wood)
+				.setBlockName("SecretWoodenDoorBlock");
+		camoDoorIron = new BlockCamoDoor(Material.iron)
+				.setBlockName("SecretIronDoorBlock");
+
+		// registers
+		GameRegistry.registerBlock(torchLever, "TorchLever");
+		GameRegistry.registerBlock(oneWay, "OneWayGlass");
+		GameRegistry.registerBlock(camoGate, "CamoGate");
+		GameRegistry.registerBlock(camoGateExt, "CamoDummy");
+
+		GameRegistry.registerBlock(camoTrapDoor, "SecretTrapDoor");
+
+		GameRegistry.registerBlock(camoDoorWood, "SecretWoodenDoorBlock");
+
+		GameRegistry.registerBlock(camoGhost, "GhostBlock");
+		GameRegistry.registerBlock(camoLever, "SecretCamoLever");
+		GameRegistry.registerBlock(camoCurrent, "SecretCamoRedstone");
+
+		GameRegistry.registerBlock(camoButton, ItemBlockCamoButton.class,
+				"SecretCamoButton");
+
+		GameRegistry.registerBlock(camoPlateAll, "SecretPressurePlate");
+		GameRegistry.registerBlock(camoPlatePlayer, "SecretPlayerPlate");
+		GameRegistry.registerBlock(camoPlateLight, "SecretLightPlate");
+		GameRegistry.registerBlock(camoPlateHeavy, "SecretHeavyPlate");
+
+		GameRegistry.registerBlock(camoStairs, "SecretStair");
+
+		GameRegistry.registerBlock(camoChest, "SecretChest");
+		GameRegistry.registerBlock(camoTrappedChest, "SecretTrappedChest");
+
+		GameRegistry.registerBlock(camoLightDetector, "SecretLightDetector");
+
+		GameRegistry.registerBlock(solidAir, "SolidAir");
+		GameRegistry.registerBlock(ModBlocks.camoDoorIron,
+				"SecretIronDoorBlock");
 
 	}
 
